@@ -1,6 +1,4 @@
 @echo off
-mode con:cols=50 lines=20
-title A7 VPN
 set FilePath=%0
 call :getLock
 exit /b
@@ -8,6 +6,8 @@ exit /b
 call :main 9>>"%~f0"
 exit /b
 :main
+mode con:cols=50 lines=20
+title A7 VPN
 set vpnerror=0
 echo :loop > "%Temp%\VpnServices.bat"
 echo timeout 5 >> "%Temp%\VpnServices.bat"
